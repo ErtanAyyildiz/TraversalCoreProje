@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntitiyLayer.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -15,13 +16,31 @@ namespace TraversalCoreProje.Areas.Member.Controllers
     {
         DestinationManager destinationManager = new DestinationManager(new EfDestinationDal());
         ReservationManager reservationManager = new ReservationManager(new EfReservationDal());
-        public IActionResult MyCurrentReservation()
+
+        private readonly UserManager<AppUser> _userManager;
+
+        public ReservationController(UserManager<AppUser> userManager)
         {
-            return View();
+            _userManager = userManager;
         }
-        public IActionResult MyOldReservation()
+
+        public async Task<IActionResult> MyCurrentReservation()
         {
-            return View();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
+            return View(valuesList);
+        }
+        public async Task<IActionResult> MyOldReservation()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByPrevious(values.Id);
+            return View(valuesList);
+        }
+        public async Task<IActionResult> MyApprovalReservation()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var valuesList = reservationManager.GetListWithReservationByWaitApproval(values.Id);
+            return View(valuesList);
         }
         [HttpGet]
         public IActionResult NewReservation()
@@ -29,8 +48,8 @@ namespace TraversalCoreProje.Areas.Member.Controllers
             List<SelectListItem> values = (from x in destinationManager.TGetList()
                                            select new SelectListItem
                                            {
-                                               Text=x.City,
-                                               Value=x.DestinationID.ToString()
+                                               Text = x.City,
+                                               Value = x.DestinationID.ToString()
                                            }).ToList();
             ViewBag.v = values;
             return View();
