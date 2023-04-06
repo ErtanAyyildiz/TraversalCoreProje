@@ -2,9 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using TraversalCoreProje.Areas.Member.Models;
 
@@ -22,7 +20,7 @@ namespace TraversalCoreProje.Areas.Member.Controllers
         }
 
         [HttpGet]
-        public async Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             UserEditViewModel userEditViewModel = new UserEditViewModel();

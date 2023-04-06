@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BusinessLayer.Abstract.AbstractUow
 {
@@ -10,7 +6,7 @@ namespace BusinessLayer.Abstract.AbstractUow
     {
         void TInsert(T t);
         void TUpdate(T t);
-        void TMultiUpdate(List<T> t); 
+        void TMultiUpdate(List<T> t);
         T TGetByID(int id);
     }
 }

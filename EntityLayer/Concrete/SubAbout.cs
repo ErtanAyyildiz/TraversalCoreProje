@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
-  public  class SubAbout
+    public class SubAbout
     {
         [Key]
         public int SubAboutID { get; set; }

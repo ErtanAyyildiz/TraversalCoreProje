@@ -53,7 +53,7 @@ namespace SignalRApiForSql.Models
                             {
                                 visitorChart.Counts.Add(reader.GetInt32(x));
                             }
-                            
+
                         });
                         visitorCharts.Add(visitorChart);
                     }

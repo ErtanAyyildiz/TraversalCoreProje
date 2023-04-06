@@ -1,9 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using TraversalCoreProje.CQRS.Commands.GuideCommands;
@@ -23,7 +20,7 @@ namespace TraversalCoreProje.CQRS.Handlers.GuideHandlers
             {
                 Name = request.Name,
                 Description = request.Description,
-                Status = true             
+                Status = true
             });
             await _context.SaveChangesAsync();
             return Unit.Value;

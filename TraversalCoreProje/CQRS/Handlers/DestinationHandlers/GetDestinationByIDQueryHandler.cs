@@ -1,8 +1,4 @@
 ﻿using DataAccessLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using TraversalCoreProje.CQRS.Queries.DestinationQueries;
 using TraversalCoreProje.CQRS.Results.DestinationResults;
 
@@ -24,7 +20,7 @@ namespace TraversalCoreProje.CQRS.Handlers.DestinationHandlers
                 DestinationID = values.DestinationID,
                 City = values.City,
                 DayNight = values.DayNight,
-                Price=values.Price
+                Price = values.Price
             };
         }
     }

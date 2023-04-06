@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using SignalRApi.DAL;
 using SignalRApi.Hubs;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +26,7 @@ namespace SignalRApi.Model
         {
             await _context.Visitors.AddAsync(visitor);
             await _context.SaveChangesAsync();
-            await _hubContext.Clients.All.SendAsync("CallVisitorList",GetVisitorChartList());
+            await _hubContext.Clients.All.SendAsync("CallVisitorList", GetVisitorChartList());
         }
         public List<VisitorChart> GetVisitorChartList()
         {
@@ -37,7 +36,7 @@ namespace SignalRApi.Model
                 command.CommandText = "Select * From crosstab ( 'Select VisitDate,City,CityVisitCount From Visitors Order By 1, 2') As ct(VisitDate date,City1 int, City2 int, City3 int, City4 int, City5 int);";
                 command.CommandType = System.Data.CommandType.Text;
                 _context.Database.OpenConnection();
-                using(var reader = command.ExecuteReader())
+                using (var reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {

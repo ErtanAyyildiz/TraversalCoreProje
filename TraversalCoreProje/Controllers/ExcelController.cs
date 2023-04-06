@@ -2,12 +2,9 @@
 using ClosedXML.Excel;
 using DataAccessLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
-using OfficeOpenXml;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using TraversalCoreProje.Models;
 
 namespace TraversalCoreProje.Controllers
@@ -50,7 +47,7 @@ namespace TraversalCoreProje.Controllers
 
         public IActionResult DestinationExcelReport()
         {
-            using(var workBook=new XLWorkbook())
+            using (var workBook = new XLWorkbook())
             {
                 var workSheet = workBook.Worksheets.Add("Tur Listesi");
                 workSheet.Cell(1, 1).Value = "Şehir";
@@ -59,7 +56,7 @@ namespace TraversalCoreProje.Controllers
                 workSheet.Cell(1, 4).Value = "Kapasite";
 
                 int rowCount = 2;
-                foreach(var item in DestinationList())
+                foreach (var item in DestinationList())
                 {
                     workSheet.Cell(rowCount, 1).Value = item.City;
                     workSheet.Cell(rowCount, 2).Value = item.DayNight;
@@ -68,7 +65,7 @@ namespace TraversalCoreProje.Controllers
                     rowCount++;
                 }
 
-                using(var stream=new MemoryStream())
+                using (var stream = new MemoryStream())
                 {
                     workBook.SaveAs(stream);
                     var content = stream.ToArray();

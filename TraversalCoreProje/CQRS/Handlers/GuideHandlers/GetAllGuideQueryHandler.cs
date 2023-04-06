@@ -1,7 +1,6 @@
 ﻿using DataAccessLayer.Concrete;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -11,7 +10,7 @@ using TraversalCoreProje.CQRS.Results.GuideResults;
 
 namespace TraversalCoreProje.CQRS.Handlers.GuideHandlers
 {
-    public class GetAllGuideQueryHandler:IRequestHandler<GetAllGuideQuery,List<GetAllGuideQueryResult>>
+    public class GetAllGuideQueryHandler : IRequestHandler<GetAllGuideQuery, List<GetAllGuideQueryResult>>
     {
         private readonly Context _context;
         public GetAllGuideQueryHandler(Context context)

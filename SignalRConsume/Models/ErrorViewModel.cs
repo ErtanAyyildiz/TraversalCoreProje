@@ -1,5 +1,3 @@
-using System;
-
 namespace SignalRConsume.Models
 {
     public class ErrorViewModel

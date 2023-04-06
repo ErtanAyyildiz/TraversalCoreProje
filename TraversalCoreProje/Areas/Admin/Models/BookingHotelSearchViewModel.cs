@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace TraversalCoreProje.Areas.Admin.Models
+﻿namespace TraversalCoreProje.Areas.Admin.Models
 {
     public class BookingHotelSearchViewModel
     {
-            public int primary_count { get; set; }
-            public int count { get; set; }
-            public Room_Distribution[] room_distribution { get; set; }
-            public Map_Bounding_Box map_bounding_box { get; set; }
-            public int total_count_with_filters { get; set; }
-            public int unfiltered_count { get; set; }
-            public int extended_count { get; set; }
-            public int unfiltered_primary_count { get; set; }
-            public int search_radius { get; set; }
-            public Sort[] sort { get; set; }
-            public Result[] result { get; set; }   
+        public int primary_count { get; set; }
+        public int count { get; set; }
+        public Room_Distribution[] room_distribution { get; set; }
+        public Map_Bounding_Box map_bounding_box { get; set; }
+        public int total_count_with_filters { get; set; }
+        public int unfiltered_count { get; set; }
+        public int extended_count { get; set; }
+        public int unfiltered_primary_count { get; set; }
+        public int search_radius { get; set; }
+        public Sort[] sort { get; set; }
+        public Result[] result { get; set; }
 
         public class Map_Bounding_Box
         {

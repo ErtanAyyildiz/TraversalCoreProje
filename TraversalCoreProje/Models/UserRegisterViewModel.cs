@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TraversalCoreProje.Models
 {
@@ -24,7 +20,7 @@ namespace TraversalCoreProje.Models
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Lütfen şifreyi tekrar giriniz")]
-        [Compare("Password",ErrorMessage ="şifreler uyumlu değil")]
+        [Compare("Password", ErrorMessage = "şifreler uyumlu değil")]
         public string ConfirmPassword { get; set; }
     }
 }

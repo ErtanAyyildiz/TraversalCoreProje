@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TraversalCoreProje.Models
 {
-    public class CustomIdentityValidator:IdentityErrorDescriber
+    public class CustomIdentityValidator : IdentityErrorDescriber
     {
         public override IdentityError PasswordTooShort(int length)
         {

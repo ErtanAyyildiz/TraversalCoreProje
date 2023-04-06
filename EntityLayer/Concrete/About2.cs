@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
- public   class About2
+    public class About2
     {
         [Key]
         public int About2ID { get; set; }

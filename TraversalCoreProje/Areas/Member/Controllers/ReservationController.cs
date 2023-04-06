@@ -4,7 +4,6 @@ using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,13 +24,13 @@ namespace TraversalCoreProje.Areas.Member.Controllers
             _userManager = userManager;
         }
 
-        public async Task< IActionResult> MyCurrentReservation()
+        public async Task<IActionResult> MyCurrentReservation()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             var valuesList = reservationManager.GetListWithReservationByAccepted(values.Id);
             return View(valuesList);
         }
-        public async Task <IActionResult> MyOldReservation()
+        public async Task<IActionResult> MyOldReservation()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             var valuesList = reservationManager.GetListWithReservationByPrevious(values.Id);

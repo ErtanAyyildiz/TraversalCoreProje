@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
-  public  class Feature2
+    public class Feature2
     {
         [Key]
         public int Feature2ID { get; set; }

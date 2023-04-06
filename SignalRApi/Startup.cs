@@ -1,19 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SignalRApi.DAL;
 using SignalRApi.Hubs;
 using SignalRApi.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SignalRApi
 {
@@ -42,7 +36,7 @@ namespace SignalRApi
                 }));
 
             services.AddEntityFrameworkNpgsql().AddDbContext<Context>(opt =>
-            opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));          
+            opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
