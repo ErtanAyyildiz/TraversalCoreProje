@@ -1,6 +1,6 @@
 Traversal Project
 
-This is a sample project showcasing the use of .NET Core 5.0, N-Tier Architecture, SignalR, Identity Server, Ajax, HTML, CSS, and JavaScript.
+This is showcasing the use of .NET Core 5.0, N-Tier Architecture, SignalR, Identity Server, Ajax, HTML, CSS, and JavaScript.
 
 Description
 The purpose of this project is to demonstrate the implementation of a web application using a combination of technologies and architectural patterns. It provides a foundation for building robust, scalable, and secure applications.
